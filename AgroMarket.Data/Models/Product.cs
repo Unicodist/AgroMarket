@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace AgroMarket.Data.Models
 {
-    internal class Product
+    public class Product
     {
+        public long Id { get; set; }
+        public long ProductClassId { get; set; }
+        public ProductClass Class { get; set; }
     }
 }

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace AgroMarket.Data.Models
 {
-    internal class User
+    public class User
     {
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public string MobileNumber { get; set; }
     }
 }

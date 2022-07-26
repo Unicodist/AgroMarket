@@ -8,7 +8,8 @@
 
     <ItemGroup>
       <Folder Include="Controllers\Api" />
-      <Folder Include="ViewModels\" />
+      <Folder Include="ViewModel" />
+      <Folder Include="Views\Product" />
     </ItemGroup>
 
 </Project>
