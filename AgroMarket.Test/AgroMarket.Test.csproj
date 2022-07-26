@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AgroMarket\AgroMarket.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="src\Enum" />
+      <Folder Include="src\Model" />
+    </ItemGroup>
+
+</Project>
