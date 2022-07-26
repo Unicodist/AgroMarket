@@ -10,6 +10,6 @@ namespace AgroMarket.Data.Models
     {
         public long Id { get; set; }
         public long ProductClassId { get; set; }
-        public ProductClass Class { get; set; }
+        public virtual ProductClass Class { get; set; }
     }
 }
