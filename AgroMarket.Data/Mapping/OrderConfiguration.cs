@@ -18,11 +18,8 @@ namespace AgroMarket.Data.Mapping
             _ = builder.Property(a => a.Id).HasColumnName("order_id");
             _ = builder.Property(a => a.Date).HasColumnName("order_date");
             _ = builder.Property(a => a.OrderedByUserId).HasColumnName("order_orderbyuserid");
-            _ = builder.Property(a => a.DeliveredByUserId).HasColumnName("order_deliverbyuserid");
-            _ = builder.Property(a => a.OrderedBy).HasColumnName("order_orderedby");
-            _ = builder.Property(a => a.DeliveredBy).HasColumnName("order_deliveredby");
-
-
+            
+            _ = builder.HasOne(a => a.OrderedBy).WithMany().HasForeignKey(a=>a.OrderedByUserId);
         }
     }
 }
