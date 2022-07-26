@@ -1,6 +1,6 @@
 ﻿namespace AgroMarket.Data.Enum
 {
-    internal class ShipmentState
+    public class ShipmentState
     {
     }
 }

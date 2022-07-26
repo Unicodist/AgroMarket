@@ -11,4 +11,8 @@
       <Folder Include="ViewModel" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\AgroMarket.Data\AgroMarket.Data.csproj" />
+    </ItemGroup>
+
 </Project>
