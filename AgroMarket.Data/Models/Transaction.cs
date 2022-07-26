@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AgroMarket.Data.Enum;
 
 namespace AgroMarket.Data.Models
 {
@@ -11,5 +12,6 @@ namespace AgroMarket.Data.Models
         public long Id { get; set; }
         public long OrderId { get; set; }
         public virtual Order Order {get;set;}
+        public ShipmentState State { get; set; }
     }
 }
