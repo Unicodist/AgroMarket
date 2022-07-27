@@ -10,7 +10,8 @@ namespace AgroMarket.Data.Mapping
         public void Configure(EntityTypeBuilder<OrderProduct> builder)
         {
             _ = builder.ToTable("orderproduct");
-            _ = builder.HasNoKey();
+            _ = builder.HasKey(a=>a.Id);
+            _ = builder.Property(a => a.Id).HasColumnName("order_product_id");
             _ = builder.Property(a => a.OrderId).HasColumnName("order_id");
             _ = builder.Property(a => a.ProductId).HasColumnName("product_id");
 
