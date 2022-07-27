@@ -6,7 +6,6 @@
         {
             
         }
-        
         private const string _customer = "Customer";
         private const string _farmer = "Farmer";
 
