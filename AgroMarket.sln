@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgroMarket.Data", "AgroMark
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgroMarket.Test", "AgroMarket.Test\AgroMarket.Test.csproj", "{192A7132-F740-42C5-9227-14D7DF57D92D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgroMarket.Service", "AgroMarket.Service\AgroMarket.Service.csproj", "{9CE29155-A5C3-4A3D-ACE9-7A65624E58A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{192A7132-F740-42C5-9227-14D7DF57D92D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{192A7132-F740-42C5-9227-14D7DF57D92D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{192A7132-F740-42C5-9227-14D7DF57D92D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE29155-A5C3-4A3D-ACE9-7A65624E58A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE29155-A5C3-4A3D-ACE9-7A65624E58A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE29155-A5C3-4A3D-ACE9-7A65624E58A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE29155-A5C3-4A3D-ACE9-7A65624E58A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

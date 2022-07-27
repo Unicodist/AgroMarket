@@ -20,6 +20,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\AgroMarket.Data\AgroMarket.Data.csproj" />
+      <ProjectReference Include="..\AgroMarket.Service\AgroMarket.Service.csproj" />
     </ItemGroup>
 
 </Project>
