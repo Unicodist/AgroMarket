@@ -1,5 +1,5 @@
-﻿using AgroMarket.Data.Enum;
-using System.Linq;
+﻿using System.Linq;
+using AgroMarket.Shared.Enum;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AgroMarket.Data.Converters

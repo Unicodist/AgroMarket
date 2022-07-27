@@ -1,6 +1,6 @@
 ﻿using AgroMarket.Data.Converters;
-using AgroMarket.Data.Enum;
 using AgroMarket.Data.Models;
+using AgroMarket.Shared.Enum;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

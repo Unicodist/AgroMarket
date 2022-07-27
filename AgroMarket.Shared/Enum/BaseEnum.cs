@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace AgroMarket.Data.Enum;
+namespace AgroMarket.Shared.Enum;
 
 public class BaseEnum
 {

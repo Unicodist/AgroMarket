@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AgroMarket.Shared.Exception;
 
-namespace AgroMarket.Data.BaseType
+namespace AgroMarket.Shared.BaseType
 {
     public class Name
     {
@@ -12,6 +8,9 @@ namespace AgroMarket.Data.BaseType
 
         public Name(string name)
         {
+            if (string.IsNullOrEmpty(name))
+                throw new IllegalNameException();
+            name = name.Trim();
             this.name = name;
         }
 

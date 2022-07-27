@@ -1,4 +1,4 @@
-﻿namespace AgroMarket.Data.Enum
+﻿namespace AgroMarket.Shared.Enum
 {
     public class UserType : BaseEnum
     {
@@ -9,7 +9,7 @@
         private const string _customer = "Customer";
         private const string _farmer = "Farmer";
 
-        public UserType Customer = new UserType(1, _customer);
-        public UserType Farmer = new UserType(2, _farmer);
+        public static UserType Customer = new UserType(1, _customer);
+        public static UserType Farmer = new UserType(2, _farmer);
     }
 }

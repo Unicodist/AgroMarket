@@ -1,4 +1,4 @@
-﻿namespace AgroMarket.Data.Enum;
+﻿namespace AgroMarket.Shared.Enum;
 
 public class ProductState : BaseEnum
 {

@@ -1,5 +1,5 @@
-﻿using AgroMarket.Data.Enum;
-using AgroMarket.Data.Models;
+﻿using AgroMarket.Data.Models;
+using AgroMarket.Shared.Enum;
 using Xunit;
 
 namespace AgroMarket.Test.Enum;
