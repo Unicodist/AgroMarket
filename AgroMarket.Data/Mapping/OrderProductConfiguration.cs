@@ -11,8 +11,9 @@ namespace AgroMarket.Data.Mapping
         {
             _ = builder.ToTable("orderproduct");
             _ = builder.HasKey(a => a.OrderId);
-            _ = builder.Property(a => a.OrderId).HasColumnName("orderproduct_orderid");
-            _ = builder.Property(a => a.ProductId).HasColumnName("orderproduct_productid");
+            _ = builder.HasKey(a => a.ProductId);
+            _ = builder.Property(a => a.OrderId).HasColumnName("order_id");
+            _ = builder.Property(a => a.ProductId).HasColumnName("product_id");
 
             _ = builder.HasOne(a => a.Order).WithMany().HasForeignKey(a => a.OrderId);
             _ = builder.HasOne(a => a.Product).WithMany().HasForeignKey(a => a.ProductId);
