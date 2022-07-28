@@ -12,9 +12,15 @@ public class BaseRepository<T> where T : class
         _set = context.Set<T>();
     }
 
-    public void InsertAsync(T entity)
+    public async Task InsertAsync(T entity)
     {
         _ = _context.AddAsync(entity);
-        _context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task UpdateAsync(T entity)
+    {
+        _context.Update(entity);
+        await _context.SaveChangesAsync();
     }
 }
