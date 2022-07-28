@@ -13,10 +13,9 @@ public class UserService
         _userRepo = userRepo;
     }
 
-    public Task Insert(UserCreateDto dto)
+    public async Task Insert(UserCreateDto dto)
     {
         var user = new User(dto.Name,dto.MobileNumber);
-        _userRepo.InsertAsync(user);
-        return Task.CompletedTask;
+        await _userRepo.InsertAsync(user);
     }
 }
