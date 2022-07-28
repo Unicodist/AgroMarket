@@ -1,4 +1,5 @@
-﻿using AgroMarket.Data.Repository;
+﻿using AgroMarket.Data.Models;
+using AgroMarket.Data.Repository;
 using AgroMarket.Service.src.Dto.User;
 
 namespace AgroMarket.Service;
@@ -14,8 +15,8 @@ public class UserService
 
     public Task Insert(UserCreateDto dto)
     {
-
-        //_userRepo.InsertAsync(dto);
+        var user = new User(dto.Name,dto.MobileNumber);
+        _userRepo.InsertAsync(user);
         return Task.CompletedTask;
     }
 }
