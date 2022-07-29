@@ -1,15 +1,12 @@
-﻿@model AgroMarket.ViewModel.UserCreateViewModel;
-
+﻿@model AgroMarket.ViewModel.User.UserLoginViewModel;
+<link rel="stylesheet" href="~/css/account/login/loginform.css">
 <div class="wrapper">
-    <form class="form-signin">
-        <h2 class="form-signin-heading text-center">Login Form</h2>
-        <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-        <input type="password" class="form-control" name="password" placeholder="Password" required="" />
-        <label class="checkbox">
-            <input type="checkbox" value="rememberMe" id="rememberMe" name="rememberMe">Remember Me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block">Loginin</button>
-    </form>
+  <form class="form-signin" data-url>
+    <h2 class="form-signin-heading text-center">Login Form</h2>
+    @Html.TextBoxFor(a => a.UserName, new {@class = "form-control", placeholder = "Username", required = "required", autofocus = "autofocus"})
+    @Html.PasswordFor(a => a.Password, new {@class = "form-control", placeholder = "Password", required = "required"})
+    <button class="btn btn-lg btn-primary btn-block text-center">Loginin</button>
+  </form>
 
 </div>
 
