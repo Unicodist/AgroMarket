@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AgroMarket.Service.src.Dto.User
+﻿namespace AgroMarket.Service.Dto.User
 {
     public class UserCreateDto
     {
+        public UserCreateDto(string modelName, string modelMobileNumber)
+        {
+            Name = modelName;
+            MobileNumber = modelMobileNumber;
+        }
+
         public string Name { get; set; }
         public string MobileNumber { get; set; }
     }

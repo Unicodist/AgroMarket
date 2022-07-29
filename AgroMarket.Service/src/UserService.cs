@@ -1,6 +1,6 @@
 ﻿using AgroMarket.Data.Models;
 using AgroMarket.Data.Repository;
-using AgroMarket.Service.src.Dto.User;
+using AgroMarket.Service.Dto.User;
 
 namespace AgroMarket.Service;
 
