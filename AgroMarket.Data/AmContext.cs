@@ -27,6 +27,6 @@ public class AmContext : DbContext
         modelBuilder.ApplyConfiguration(new CartConfiguration());
         modelBuilder.ApplyConfiguration(new OrderConfiguration());
         modelBuilder.ApplyConfiguration(new TransactionConfiguration());
-        
+
     }
 }
