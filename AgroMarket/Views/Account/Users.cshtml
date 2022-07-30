@@ -1,0 +1,39 @@
+﻿@*<h4 class="text-center text-uppercase">List of Users</h4>
+<hr style="width: 100%; margin-left: auto; margin-right: auto;" />
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>@Html.()</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 1;
+            }
+            @foreach (var user in )
+            {
+                <tr>
+                    <td>@i</td>
+
+                    <td>@user.Name</td>
+                    <td>@user.Email</td>
+                    <td>@user.MobileNumber</td>
+                    <td>@user.Address</td>
+                    <td>@user.PanNumber</td>
+                    
+                    <td>
+                        <a href="" class="btn btn-primary">Update</a>
+                        <a href="" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                i++;
+            }
+
+        </tbody>
+    </table>
+</div>
+*@

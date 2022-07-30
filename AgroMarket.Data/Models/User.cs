@@ -19,6 +19,9 @@ namespace AgroMarket.Data.Models
         public long Id { get; set; }
         public string Name { get; set; }
         public string MobileNumber { get; set; }
+        public string? PanNumber { get; set; }
+        public string Address { get; set; }
+
         public UserType Type { get; set; }
     }
 }
