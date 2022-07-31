@@ -8,5 +8,9 @@ namespace AgroMarket.Controllers
         {
             return View();
         }
+        public IActionResult Recent()
+        {
+            return View();
+        }
     }
 }

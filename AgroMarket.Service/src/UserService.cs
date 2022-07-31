@@ -18,4 +18,9 @@ public class UserService
         var user = new User(dto.Name,dto.MobileNumber);
         await _userRepo.InsertAsync(user);
     }
+
+    public void Login(string userName, string password)
+    {
+        throw new NotImplementedException();
+    }
 }
