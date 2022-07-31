@@ -9,11 +9,13 @@ namespace AgroMarket.Data.Models
 {
     public class User
     {
-        public User(string name, string mobileNumber)
+        public User(string name, string mobileNumber, string password, string address)
         {
             Name = name;
             MobileNumber = mobileNumber;
             Type = UserType.Customer;
+            Address = address;
+            Password = password;
         }
 
         public long Id { get; set; }
@@ -23,5 +25,6 @@ namespace AgroMarket.Data.Models
         public string Address { get; set; }
 
         public UserType Type { get; set; }
+        public string Password { get; set; }
     }
 }

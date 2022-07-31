@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AgroMarket.Controllers
 {
@@ -8,7 +9,13 @@ namespace AgroMarket.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
         public IActionResult Login()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        public IActionResult Signup()
         {
             return View();
         }

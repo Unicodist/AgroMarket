@@ -15,12 +15,17 @@ public class UserService
 
     public async Task Insert(UserCreateDto dto)
     {
-        var user = new User(dto.Name,dto.MobileNumber);
+        var user = new User(dto.Name,dto.MobileNumber,dto.Password, dto.Address);
         await _userRepo.InsertAsync(user);
     }
 
-    public void Login(string userName, string password)
+    public User Login(string mobileNumber, string password)
     {
-        throw new NotImplementedException();
+        var user = _userRepo.GetByUsername(mobileNumber);
+        if(BCrypt.Net.BCrypt.Verify(password, user.Password))
+        {
+            return user;
+        }
+        throw new Exception("Wrong password");
     }
 }

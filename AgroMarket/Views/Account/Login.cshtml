@@ -3,31 +3,8 @@
 <div class="wrapper">
   <form class="form-signin" data-ajax="true" data-ajax-url="@Url.Action("")">
     <h2 class="form-signin-heading text-center">Login Form</h2>
-    @Html.TextBoxFor(a => a.UserName, new {@class = "form-control", placeholder = "Username", required = "required", autofocus = "autofocus"})
+    @Html.TextBoxFor(a => a.MobileNumber, new {@class = "form-control", placeholder = "Username", required = "required", autofocus = "autofocus"})
     @Html.PasswordFor(a => a.Password, new {@class = "form-control", placeholder = "Password", required = "required"})
-    <button class="btn btn-lg btn-primary btn-block text-center">Loginin</button>
+    <button class="btn btn-lg btn-primary btn-block text-center">Login</button>
   </form>
-
 </div>
-
-
-
-@*<div class="mb-3">
-<label for="usertype" class="form-label">User:</label>
- <select name="usertype" class="form-control border border-dark">
-        <option value="Admin">Admin</option>
-        <option value="Farmer">Farmer</option>
-        <option value="Customer">Customer</option>
-  </select>
-</div>
-  <div class="mb-3 mt-3">
-    <label for="email" class="form-label">Email:</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-  </div>
-  <div class="mb-3">
-    <label for="pwd" class="form-label">Password:</label>
-    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>*@

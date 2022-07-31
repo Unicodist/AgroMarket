@@ -1,4 +1,5 @@
 ﻿using AgroMarket.Data.Models;
+using AgroMarket.Shared.Exception;
 
 namespace AgroMarket.Data.Repository;
 
@@ -8,8 +9,8 @@ public class UserRepository : BaseRepository<User>
     {
     }
 
-    public object GetByUsername(string userName)
+    public User GetByUsername(string mobileNumber)
     {
-        throw new NotImplementedException();
+        return GetQueryable().SingleOrDefault(x => x.MobileNumber == mobileNumber)??throw new UserNotFoundException();
     }
 }

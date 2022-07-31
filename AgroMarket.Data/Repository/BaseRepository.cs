@@ -23,4 +23,8 @@ public class BaseRepository<T> where T : class
         _context.Update(entity);
         await _context.SaveChangesAsync();
     }
+    public IQueryable<T> GetQueryable()
+    {
+        return _set;
+    }
 }
