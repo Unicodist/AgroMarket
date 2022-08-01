@@ -1,17 +1,13 @@
 ﻿ <center>
         <div class="container" style="width:500px;">
             <h1>PROFILE</h1>
-            <form>
+            <form data-ajax="true" asp-action="Signup" asp-controller="UserApi">
                 <div class="row">
                     <div class="col-7"><input class="form-control" type="hidden" name="id" value="" /></div>
                 </div><br />
                 <div class="row">
                     <div class="col-5"><label> Name:</label></div>
                     <div class="col-7"><input class="form-control" type="text" name="name" value="" /></div>
-                </div><br />
-                <div class="row">
-                    <div class="col-5"><label>Email:</label> </div>
-                    <div class="col-7"><input class="form-control" type="email" name="email" value="" /> </div>
                 </div><br />
                 <div class="row">
                     <div class="col-5"><label>Address:</label></div>
