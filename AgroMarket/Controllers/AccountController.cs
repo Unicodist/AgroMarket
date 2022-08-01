@@ -5,6 +5,7 @@ namespace AgroMarket.Controllers
 {
     public class AccountController : Controller
     {
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
@@ -16,6 +17,11 @@ namespace AgroMarket.Controllers
         }
         [AllowAnonymous]
         public IActionResult Signup()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        public IActionResult Users()
         {
             return View();
         }
