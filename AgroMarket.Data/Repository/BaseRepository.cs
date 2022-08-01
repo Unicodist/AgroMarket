@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AgroMarket.Shared.Exception;
+using Microsoft.EntityFrameworkCore;
 
 namespace AgroMarket.Data.Repository;
 
@@ -26,5 +27,9 @@ public class BaseRepository<T> where T : class
     public IQueryable<T> GetQueryable()
     {
         return _set;
+    }
+    public async Task<T?> GetByIdAsync(int id)
+    {
+        return await _set.FindAsync(id).ConfigureAwait(false);
     }
 }
