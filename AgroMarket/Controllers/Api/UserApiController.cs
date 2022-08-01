@@ -1,5 +1,7 @@
-﻿using AgroMarket.Service;
+﻿using AgroMarket.Data.Repository;
+using AgroMarket.Service;
 using AgroMarket.Service.Dto.User;
+using AgroMarket.Shared.Exception;
 using AgroMarket.ViewModel;
 using AgroMarket.ViewModel.User;
 using Microsoft.AspNetCore.Authentication;
@@ -13,11 +15,13 @@ namespace AgroMarket.Controllers.Api;
 public class UserApiController : ApiControllerBase
 {
     private readonly UserService _userService;
+    private readonly UserRepository _userRepo;
 
     // GET
-    public UserApiController(UserService userService)
+    public UserApiController(UserService userService, UserRepository userRepo)
     {
         _userService = userService;
+        _userRepo = userRepo;
     }
     [AllowAnonymous]
     [Route("login")]
@@ -46,5 +50,18 @@ public class UserApiController : ApiControllerBase
         var userCreateDto = new UserCreateDto(model.Name,model.MobileNumber,model.Password,model.Address);
         await _userService.Insert(userCreateDto);
         return Ok();
+    }
+
+    public async Task<JsonResult> Get(int id)
+    {
+        var user = await _userRepo.GetByIdAsync(id)??throw new UserNotFoundException();
+        var userModel = new UserViewModel
+        {
+            Id = user.Id,
+            Name = user.Name,
+            Address = user.Address,
+            PanNo = user.PanNumber,
+        };
+        return new JsonResult(userModel);
     }
 }

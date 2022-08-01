@@ -21,7 +21,7 @@ public class UserService
 
     public User Login(string mobileNumber, string password)
     {
-        var user = _userRepo.GetByUsername(mobileNumber);
+        var user = _userRepo.GetByMobileNumber(mobileNumber);
         if(BCrypt.Net.BCrypt.Verify(password, user.Password))
         {
             return user;

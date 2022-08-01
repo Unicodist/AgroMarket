@@ -9,7 +9,7 @@ public class UserRepository : BaseRepository<User>
     {
     }
 
-    public User GetByUsername(string mobileNumber)
+    public User GetByMobileNumber(string mobileNumber)
     {
         return GetQueryable().SingleOrDefault(x => x.MobileNumber == mobileNumber)??throw new UserNotFoundException();
     }
