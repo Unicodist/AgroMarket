@@ -15,13 +15,14 @@ public class UserService
 
     public async Task Insert(UserCreateDto dto)
     {
-        var user = new User(dto.Name,dto.MobileNumber,dto.Password, dto.Address);
+        var user = new User(dto.Name,dto.MobileNumber,BCrypt.Net.BCrypt.EnhancedHashPassword(dto.Password), dto.Address);
         await _userRepo.InsertAsync(user);
     }
 
     public User Login(string mobileNumber, string password)
     {
         var user = _userRepo.GetByMobileNumber(mobileNumber);
+        var enc = BCrypt.Net.BCrypt.HashPassword(password);
         if(BCrypt.Net.BCrypt.Verify(password, user.Password))
         {
             return user;

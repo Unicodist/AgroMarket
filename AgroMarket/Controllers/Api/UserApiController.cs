@@ -25,7 +25,7 @@ public class UserApiController : ApiControllerBase
     }
     [AllowAnonymous]
     [Route("login")]
-    public async Task<IActionResult> Login(UserLoginViewModel model)
+    public async Task<IActionResult> Login([FromForm]UserLoginViewModel model)
     {
         var user = _userService.Login(model.MobileNumber, model.Password);
         List<Claim> claims = new()

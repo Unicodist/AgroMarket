@@ -24,11 +24,15 @@ public class BaseRepository<T> where T : class
         _context.Update(entity);
         await _context.SaveChangesAsync();
     }
+    public void Delete(T entity)
+    {
+        _set.Remove(entity);
+    }
     public IQueryable<T> GetQueryable()
     {
         return _set;
     }
-    public async Task<T?> GetByIdAsync(int id)
+    public async Task<T?> GetByIdAsync(long id)
     {
         return await _set.FindAsync(id).ConfigureAwait(false);
     }
