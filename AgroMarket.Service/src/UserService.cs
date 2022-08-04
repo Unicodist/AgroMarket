@@ -15,7 +15,7 @@ public class UserService
 
     public async Task Insert(UserCreateDto dto)
     {
-        var user = new User(dto.Name,dto.MobileNumber,BCrypt.Net.BCrypt.EnhancedHashPassword(dto.Password), dto.Address);
+        var user = new User(dto.Name,dto.MobileNumber,BCrypt.Net.BCrypt.HashPassword(dto.Password), dto.Address);
         await _userRepo.InsertAsync(user);
     }
 
