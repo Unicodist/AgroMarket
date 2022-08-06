@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AgroMarket.Controllers
 {
-    public class CartController : Controller
+    public class OrderController : Controller
     {
         [AllowAnonymous]
         public IActionResult Index()

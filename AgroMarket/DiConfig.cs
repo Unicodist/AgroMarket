@@ -10,8 +10,15 @@ public static class DiConfig
     {
         service.AddSingleton<AmContext>();
 
+
         service.AddSingleton<UserService>();
+        service.AddSingleton<CartService>();
+        service.AddSingleton<ProductClassService>();
+
 
         service.AddSingleton<UserRepository>();
+        service.AddSingleton<CartRepository>();
+        service.AddSingleton<ProductRepository>();
+        service.AddSingleton<ProductClassRepository>();
     }
 }

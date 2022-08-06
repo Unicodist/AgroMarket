@@ -28,7 +28,7 @@
                                 <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Farmer</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Products</a>
+                                <a class="nav-link text-dark" asp-controller="Product" asp-action="Index">Products</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Categories</a>
@@ -37,9 +37,12 @@
                                 <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
                             </li>
                         </ul>
+
                         <form class="d-flex">
                             <input class="form-control me-2" type="text" placeholder="Search">
                             <button class="btn btn-primary" type="button">Search</button>
+                            <button asp-controller="Action" asp-action="SignUp" class="btn btn-light" type="button">Signup</button>
+                            <button asp-controller="Action" asp-action="Login" class="btn btn-light" type="button">Login</button>
                         </form>
                     </div>
                 </div>
