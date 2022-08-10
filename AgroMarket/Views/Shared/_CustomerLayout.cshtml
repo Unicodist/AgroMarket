@@ -26,18 +26,24 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="" asp-action="MyProduct">My Product</a>
+                            <a class="nav-link" asp-controller="Product" asp-action="Index">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="" asp-action="MyOrder">My Order</a>
+                            <a class="nav-link" asp-controller="" asp-action="">Popular</a>
                         </li>
                        
                         </ul>
                         <ul class="d-flex">
-                            <li><span>Hello FarmerName</span>
+                            <li>
+                            <input class="form-control me-2" type="text" placeholder="Search">
+                            <button class="btn btn-primary" type="button">Search</button>
+                            </li>
+                            <li><span>Hello CustomerName</span>
 
                             </li>
-                             <li><a><i class="icon-key"></i> <span>Logout</span></a></li>
+                             <li><a class="nav-link" asp-controller="Cart" asp-action="Index"><i class="bi bi-cart"></i></a>
+                                 
+                             </li>
                            
                         </ul>
                         
@@ -64,5 +70,6 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
 
 
