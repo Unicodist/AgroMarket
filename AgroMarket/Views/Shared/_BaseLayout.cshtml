@@ -4,10 +4,11 @@
 @{
     if (User.Identity.IsAuthenticated)
     {
-        if (User.Claims.SingleOrDefault(x=>x.Type.Equals(ClaimTypes.MobilePhone)).Value.Equals(UserType.Farmer.ToString()))
+        if (User.Claims.SingleOrDefault(x=>x.Type.Equals(ClaimTypes.Role)).Value.Equals(UserType.Farmer.ToString()))
         {
             Layout = "_FarmerLayout";
         }
+        Layout = "_CustomerLayout";
     }
     else
     {
