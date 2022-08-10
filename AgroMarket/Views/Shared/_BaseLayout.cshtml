@@ -1,0 +1,17 @@
+﻿@using System.Security.Claims
+@using AgroMarket.Shared.Enum
+
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+        if (User.Claims.SingleOrDefault(x=>x.Type.Equals(ClaimTypes.MobilePhone)).Value.Equals(UserType.Farmer.ToString()))
+        {
+            Layout = "_FarmerLayout";
+        }
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
+    @RenderBody()
+}

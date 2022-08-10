@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>@ViewData["Title"] - AgroMarket</title>
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="~/lib/limonte-sweetalert2/sweetalert2.min.css"/>
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     </head>
     <body>
@@ -41,9 +42,9 @@
                         <form class="d-flex">
                             <input class="form-control me-2" type="text" placeholder="Search">
                             <button class="btn btn-primary" type="button">Search</button>
-                            <button asp-controller="Action" asp-action="SignUp" class="btn btn-light" type="button">Signup</button>
-                            <button asp-controller="Action" asp-action="Login" class="btn btn-light" type="button">Login</button>
                         </form>
+                        <a asp-controller="Account" asp-action="SignUp" class="btn btn-light" type="button">Signup</a>
+                        <a asp-controller="Account" asp-action="Login" class="btn btn-light" type="button">Login</a>
                     </div>
                 </div>
             </nav>
@@ -63,7 +64,8 @@
         <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
         <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
         <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/limonte-sweetalert2/sweetalert2.min.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
     </body>

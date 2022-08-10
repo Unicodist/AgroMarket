@@ -1,5 +1,6 @@
 ﻿using AgroMarket.Data;
 using AgroMarket.Data.Repository;
+using AgroMarket.Helper;
 using AgroMarket.Service;
 
 namespace AgroMarket;
@@ -10,6 +11,7 @@ public static class DiConfig
     {
         service.AddSingleton<AmContext>();
 
+        service.AddSingleton<UserHelper>();
 
         service.AddSingleton<UserService>();
         service.AddSingleton<CartService>();
