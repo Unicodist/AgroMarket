@@ -19,4 +19,8 @@
       <ProjectReference Include="..\AgroMarket.Service\AgroMarket.Service.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\ilibs" />
+    </ItemGroup>
+
 </Project>
