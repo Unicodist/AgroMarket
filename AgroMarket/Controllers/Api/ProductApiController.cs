@@ -7,6 +7,13 @@ namespace AgroMarket.Controllers.Api;
 
 public class ProductApiController : ApiControllerBase
 {
+    private readonly ProductFileHelper _productHelper;
+
+    public ProductApiController(ProductFileHelper productHelper)
+    {
+        _productHelper = productHelper;
+    }
+
     [HttpPost]
     public IActionResult Create(ProductCreateViewModel model)
     {
@@ -18,10 +25,10 @@ public class ProductApiController : ApiControllerBase
         var dto = new ProductCreateDto()
         {
             Name = model.Name,
-            CategoryId = model.CategoryId,
+            CategoryId = model.CategoryId??1,
             Stock = model.Stock,
             Date = model.ExpiryDate,
-            Picture = ProductFileHelper.UploadFile(model.Picture),
+            Picture = _productHelper.UploadFile(model.Picture),
             Description = model.Description,
         };
         return Ok();

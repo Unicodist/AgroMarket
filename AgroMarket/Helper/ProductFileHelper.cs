@@ -1,9 +1,24 @@
 ﻿namespace AgroMarket.Helper;
 
-public static class ProductFileHelper
+public class ProductFileHelper
 {
-    public static string UploadFile(IFormFile modelPicture)
+    private readonly IHostEnvironment _environment;
+
+    public ProductFileHelper(IHostEnvironment environment)
     {
-        throw new NotImplementedException();
+        _environment = environment;
+    }
+
+    public string UploadFile(IFormFile? file)
+    {
+        var path = "/uploads/default.jpg";
+        if (file!=null)
+        {
+            var wwwPath = _environment.ContentRootPath;
+            var mainPath = Path.Combine(wwwPath, "uploads");
+            var filename = Path.Combine(Guid.NewGuid().ToString(),file.GetFileName);
+            path = 
+        }
+        return path;
     }
 }
