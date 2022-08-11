@@ -14,8 +14,7 @@ public class ProductApiController : ApiControllerBase
         _productHelper = productHelper;
     }
 
-    [HttpPost]
-    public IActionResult Create(ProductCreateViewModel model)
+    public async Task<IActionResult> Create([FromForm]ProductCreateViewModel model)
     {
         if (!ModelState.IsValid)
         {
@@ -28,9 +27,10 @@ public class ProductApiController : ApiControllerBase
             CategoryId = model.CategoryId??1,
             Stock = model.Stock,
             Date = model.ExpiryDate,
-            Picture = _productHelper.UploadFile(model.Picture),
+            Picture = await _productHelper.UploadFile(model.Picture),
             Description = model.Description,
         };
+        
         return Ok();
     }
 }

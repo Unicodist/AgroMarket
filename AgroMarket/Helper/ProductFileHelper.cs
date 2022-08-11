@@ -9,16 +9,16 @@ public class ProductFileHelper
         _environment = environment;
     }
 
-    public string UploadFile(IFormFile? file)
+    public async Task<string> UploadFile(IFormFile? file)
     {
-        var path = "/uploads/default.jpg";
-        if (file!=null)
-        {
-            var wwwPath = _environment.ContentRootPath;
-            var mainPath = Path.Combine(wwwPath, "uploads");
-            var filename = Path.Combine(Guid.NewGuid().ToString(),file.GetFileName);
-            path = 
-        }
+        var ext = Path.GetExtension(file.FileName);
+        string path = "/uploads/default.jpg";
+        if (file == null) return path;
+        var wwwPath = Path.Combine(_environment.ContentRootPath,"wwwroot","uploads");
+        path = (Guid.NewGuid().ToString())+ Path.GetExtension(file.FileName);
+        var fullPath = Path.Combine(wwwPath, path);
+        await using var stream = new FileStream(fullPath, FileMode.Create);
+        await file.CopyToAsync(stream);
         return path;
     }
 }
