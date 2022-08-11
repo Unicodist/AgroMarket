@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace AgroMarket.Controllers.Api;
-[Route("api/user")]
 public class UserApiController : ApiControllerBase
 {
     private readonly UserService _userService;
