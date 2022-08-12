@@ -25,5 +25,10 @@ namespace AgroMarket.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
+        public IActionResult Profile()
+        {
+            return View();
+        }
     }
 }
