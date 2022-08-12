@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgroMarket.Controllers
@@ -29,6 +30,11 @@ namespace AgroMarket.Controllers
         public IActionResult Profile()
         {
             return View();
+        }
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync();
+            return RedirectToAction(nameof(Login));
         }
     }
 }

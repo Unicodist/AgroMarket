@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace AgroMarket.Controllers.Api;
-[Route("api/user")]
 public class UserApiController : ApiControllerBase
 {
     private readonly UserService _userService;
@@ -37,7 +36,11 @@ public class UserApiController : ApiControllerBase
 
         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,new ClaimsPrincipal(claimsIdentity));
-        return Ok();
+        if (model.ReturnUrl==null)
+        {
+            model.ReturnUrl = "/Home";
+        }
+        return Ok(new{Url=model.ReturnUrl});
     }
 
     [AllowAnonymous]

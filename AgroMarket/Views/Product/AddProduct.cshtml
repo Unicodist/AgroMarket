@@ -1,15 +1,43 @@
-﻿
+﻿@model AgroMarket.ViewModel.Product.ProductCreateViewModel;
 <link rel="stylesheet" href="~/css/account/login/loginform.css">
 <div class="wrapper">
-    <form class="form-signin" data-ajax="true">
+    <form class="form-signin" data-ajax="true" asp-action="Create" asp-controller="ProductApi" enctype="multipart/form-data">
         <h2 class="form-signin-heading text-center">Add Product</h2>
-        <input type="text" class="form-control" required="required" placeholder="Product Name"/>
-        <input type="text" class="form-control" required="required" placeholder="Category"/>
-        <input type="text" class="form-control" required="required" placeholder="Stock (IN KG)"/>
-        <input type="date" class="form-control" required="required" placeholder="Expiry Date"/><br />
-        <input type="file" name="file" class="form-control" accept="image/*" required="required" placeholder="Product Image"/><br />
-        <input type="text" class="form-control" required="required" placeholder="Price (IN KG)"/>
-        <input type="text" class="form-control" required="required" placeholder="Description"/>
+        <div class="form-group">
+            @Html.LabelFor(x=>x.Name)
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control mb-2" })
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x=>x.CategoryId)
+            @Html.DropDownListFor(x=>x.CategoryId,Model.Categories,new{@class="form-control mb-2"})
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x=>x.Stock)
+            @Html.TextBoxFor(x=>x.Stock,new{@class="form-control mb-2"})
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x=>x.ExpiryDate)
+            @Html.TextBoxFor(a => a.ExpiryDate, new { @class = "form-control mb-2", type = "date" })
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x=>x.Picture)
+            @Html.TextBoxFor(a=>a.Picture,new{@class="form-control mb-2",type="file",accepts="image/*"})
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x=>x.Price)
+            @Html.TextBoxFor(a=>a.Price,new{@class="form-control mb-2"})
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x=>x.Description)
+            @Html.TextAreaFor(a=>a.Description,new{@class="form-control mb-2"})
+
+        </div>
         <button class="btn btn-lg btn-primary btn-block text-center">INSERT</button>
     </form>
   

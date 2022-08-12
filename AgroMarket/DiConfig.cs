@@ -12,6 +12,7 @@ public static class DiConfig
         service.AddSingleton<AmContext>();
 
         service.AddSingleton<UserHelper>();
+        service.AddSingleton<ProductFileHelper>();
 
         service.AddSingleton<UserService>();
         service.AddSingleton<CartService>();
