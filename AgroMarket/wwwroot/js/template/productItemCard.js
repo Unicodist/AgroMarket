@@ -1,23 +1,18 @@
 ﻿function renderProductItemCard(name,farmer,price,image){
     return `
-<style>
-    .section-products .single-product:hover .part-1::before{
-        background: url('${image}') no-repeat center;
-    }
-</style>
-<div className="col-md-6 col-lg-4 col-xl-3">
-        <div id="product-1" className="single-product">
-            <div className="part-1">
-                <span className="farmer-name">${farmer}</span>
-                <ul>
-                    <li><a href="#"><i className="fas fa-shopping-cart"></i></a></li>
-                </ul>
-            </div>
-            <div className="part-2">
-                <h3 className="product-title">${name}</h3>
-
-                <h4 className="product-price">Rs.${price}</h4>
-            </div>
+<div class="row">
+    <div class="card" style="width:400px">
+        <h6>${farmer}</h6>
+    <img class="card-img-top" src="${image}" alt="Card image" style="width:100%">
+    <div class="card-body">
+        <div class="row">
+          <div><h5 class="card-title">${name} </h5></div>
         </div>
-    </div>`
+        <div class="row">
+            <h6>Rs.${price}</h6>
+        </div>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>`
 }
