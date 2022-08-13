@@ -9,6 +9,7 @@ public class OrderApiController : ApiControllerBase
 {
     private readonly OrderRepository _orderRepository;
     private readonly UserHelper _userHelper;
+    private OrderProductRepository _orderProductRepository;
 
     public OrderApiController(OrderRepository orderRepository, UserHelper userHelper)
     {
@@ -20,7 +21,7 @@ public class OrderApiController : ApiControllerBase
     public async Task<IActionResult> Get()
     {
         var user = _userHelper.GetCurrentUser(this);
-        var orders = await _orderRepository.GetQueryable().Where(x=>x.OrderedByUserId==user.Id).ToListAsync();
+        var orders = await _orderProductRepository.GetQueryable().Where(x=>x.Order.OrderedByUserId==user.Id).ToListAsync();
         return Ok(orders);
     }
 }

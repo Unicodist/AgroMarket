@@ -16,9 +16,11 @@ namespace AgroMarket.Data.Mapping
             _ = builder.ToTable("cart");
             _ = builder.HasKey(a => a.Id);
             _ = builder.Property(a => a.Id).HasColumnName("cart_id");
-            _ = builder.Property(a => a.UserId).HasColumnName("cart_userid");
+            _ = builder.Property(a => a.UserId).HasColumnName("user_id");
+            _ = builder.Property(a => a.ProductId).HasColumnName("product_id");
 
             _ = builder.HasOne(a => a.AddedBy).WithMany().HasForeignKey(a => a.UserId);
+            _ = builder.HasOne(a => a.Product).WithMany().HasForeignKey(a => a.ProductId);
 
         }
     }

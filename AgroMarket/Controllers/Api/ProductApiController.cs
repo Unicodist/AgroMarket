@@ -11,13 +11,14 @@ public class ProductApiController : ApiControllerBase
 {
     private readonly ProductFileHelper _productHelper;
     private readonly ProductService _productService;
+    private readonly ProductClassService _productClassService;
 
-    public ProductApiController(ProductFileHelper productHelper, ProductService productService)
+    public ProductApiController(ProductFileHelper productHelper, ProductService productService, ProductClassService productClassService)
     {
         _productHelper = productHelper;
         _productService = productService;
+        _productClassService = productClassService;
     }
-
     public async Task<IActionResult> Create([FromForm]ProductCreateViewModel model)
     {
         if (!ModelState.IsValid)
@@ -37,6 +38,13 @@ public class ProductApiController : ApiControllerBase
             FarmerMobileNumber = User.Claims.Single(x=>x.Type.Equals(ClaimTypes.MobilePhone)).Value,
         };
         await _productService.Insert(dto);
+        return Ok();
+    }
+    
+    [Route("addCategory")]
+    public async Task<IActionResult> AddCategory(string categoryName)
+    {
+        await _productClassService.Insert(categoryName);
         return Ok();
     }
 }

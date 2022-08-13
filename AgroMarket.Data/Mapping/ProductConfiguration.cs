@@ -19,7 +19,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
         _ = builder.Property(a => a.Name).HasColumnName("product_name");
         _ = builder.Property(a => a.Description).HasColumnName("product_description");
         _ = builder.Property(a => a.ExpiryDate).HasColumnName("product_expirydate");
-        _ = builder.Property(a => a.Price).HasColumnName("product_price");
+        _ = builder.Property(a => a.Price).HasColumnName("product_price").HasColumnType("decimal(5,2)");
         _ = builder.Property(a => a.Stock).HasColumnName("product_stock");
         _ = builder.Property(a => a.Price).HasColumnName("price");
 
