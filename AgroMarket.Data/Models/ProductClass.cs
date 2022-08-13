@@ -2,6 +2,10 @@
 
 public class ProductClass
 {
+    public ProductClass()
+    {
+    }
+
     public ProductClass(string name)
     {
         Name = name;

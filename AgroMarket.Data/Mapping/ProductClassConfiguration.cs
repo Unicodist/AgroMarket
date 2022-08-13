@@ -6,6 +6,11 @@ namespace AgroMarket.Data.Mapping;
 
 public class ProductClassConfiguration : IEntityTypeConfiguration<ProductClass>
 {
+    private ProductClass _productClass = new()
+    {
+        Id = 1,
+        Name = "Uncategorized",
+    };
     public void Configure(EntityTypeBuilder<ProductClass> builder)
     {
         _ = builder.ToTable("product_class");
@@ -14,5 +19,8 @@ public class ProductClassConfiguration : IEntityTypeConfiguration<ProductClass>
         _ = builder.Property(a => a.Name).HasColumnName("name");
 
         _ = builder.HasMany(a => a.Products).WithOne(a => a.Class).HasForeignKey(a => a.ProductClassId);
+        
+        
+        builder.HasData(_productClass);
     }
 }

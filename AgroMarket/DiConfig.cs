@@ -16,6 +16,7 @@ public static class DiConfig
 
         service.AddSingleton<UserService>();
         service.AddSingleton<CartService>();
+        service.AddSingleton<ProductService>();
         service.AddSingleton<ProductClassService>();
 
 
