@@ -6,8 +6,8 @@ namespace AgroMarket.Controllers.Api
 {
     public class CartApiController : ApiControllerBase
     {
-        private UserHelper _userHelper;
-        private CartRepository _cartRepository;
+        private readonly UserHelper _userHelper;
+        private readonly CartRepository _cartRepository;
 
         public CartApiController(UserHelper userHelper, CartRepository cartRepository)
         {
