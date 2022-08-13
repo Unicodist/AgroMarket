@@ -8,3 +8,10 @@ function onLoginFailure(xhr, status, error) {
         icon:"error",
     });
 }
+function onLoginBegin(xhr){
+    console.log(xhr)
+    $('#login-submit-button').attr('disabled','disabled');
+}
+function onLoginComplete(xhr,status){
+    $('#login-submit-button').removeAttr('disabled');
+}

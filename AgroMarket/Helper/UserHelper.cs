@@ -15,7 +15,7 @@ public class UserHelper
         _userRepository = userRepository;
     }
 
-    public User GetCurrentUser(Controller context)
+    public User GetCurrentUser(ControllerBase context)
     {
         var mobilePhone = context.User.Claims.SingleOrDefault(x => x.Type == ClaimTypes.MobilePhone).Value;
         return _userRepository.GetByMobileNumber(mobilePhone);

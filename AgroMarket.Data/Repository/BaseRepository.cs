@@ -36,4 +36,9 @@ public class BaseRepository<T> where T : class
     {
         return await _set.FindAsync(id).ConfigureAwait(false);
     }
+
+    public async Task<List<T>> GetAllAsync()
+    {
+        return await _set.ToListAsync();
+    }
 }
