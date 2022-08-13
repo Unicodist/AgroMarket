@@ -1,6 +1,7 @@
 ﻿using AgroMarket.Data.Repository;
 using AgroMarket.Helper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AgroMarket.Controllers.Api;
 
@@ -19,7 +20,7 @@ public class OrderApiController : ApiControllerBase
     public async Task<IActionResult> Get()
     {
         var user = _userHelper.GetCurrentUser(this);
-        var orders = _orderRepository.GetQueryable().Where(x=>x.OrderedByUserId==user.Id).ToList();
+        var orders = await _orderRepository.GetQueryable().Where(x=>x.OrderedByUserId==user.Id).ToListAsync();
         return Ok(orders);
     }
 }
