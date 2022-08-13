@@ -1,5 +1,4 @@
 ﻿function onLoginSuccess(data, status, xhr) {
-    console.log(data);
     window.location.replace(data.url);
 }
 function onLoginFailure(xhr, status, error) {
