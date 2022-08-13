@@ -26,6 +26,11 @@ namespace AgroMarket.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
+        public IActionResult Profile()
+        {
+            return View();
+        }
         public IActionResult Logout()
         {
             HttpContext.SignOutAsync();
