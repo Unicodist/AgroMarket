@@ -1,5 +1,12 @@
 ﻿function onCategoryAddSuccess(data,status,xhr){
-    window.location.replace(data.url);
+    Swal.fire({
+        title: "Done!",
+        text: "Product added successfully\nYou will be redirected to the page",
+        icon: "Success",
+        timer:3000
+    }).then(function (){
+        window.location.replace(data.url);
+    });
 }
 
 function onCategoryAddFailure(xhr, status, error) {
@@ -10,7 +17,6 @@ function onCategoryAddFailure(xhr, status, error) {
     });
 }
 function onAddCategoryBegin(xhr) {
-    console.log(xhr)
     $('#add-submit-button').attr('disabled', 'disabled');
 }
 function onAddCategoryComplete(xhr, status) {

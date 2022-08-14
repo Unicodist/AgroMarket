@@ -16,7 +16,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         _ = builder.Property(a => a.Type).HasColumnName("user_type").HasConversion(new EnumConverter<UserType>());
         _ = builder.Property(a => a.PanNumber).HasColumnName("user_pannumber");
         _ = builder.Property(a => a.MobileNumber).HasColumnName("mobile_number");
-        _ = builder.Property(a => a.Password).HasColumnName("password").HasMaxLength(100);
+        _ = builder.Property(a => a.Password).HasColumnName("password").HasColumnType("text");
         _ = builder.Property(a => a.Address).HasColumnName("user_address");
     }
 }

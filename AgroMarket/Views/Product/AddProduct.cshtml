@@ -54,23 +54,24 @@
 @*<script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>*@
 <!-- Modal Header -->
 <div class="modal" id="myModal">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Add Category</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Category</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
 
-      <!-- Modal body -->
-      <div class="modal-body">
-          <form class="form-signin" data-ajax="true" data-ajax-url="@Url.Action("AddCategory","ProductApi")" method="post" data-ajax-success="onCategoryAddSuccess" data-ajax-failure="onCategoryAddFailure" data-ajax-begin="onAddCategoryBegin" data-ajax-complete="onAddCategoryComplete">
-            <input type="text" class="form-control" placeholder="Category Name" required="required" />
-            <button id="add-submit-button" class="btn btn-lg btn-primary btn-block text-center">Add</button>
-          </form>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form class="form-signin" data-ajax="true" data-ajax-url="@Url.Action("AddCategory","ProductApi")" method="post" data-ajax-success="onCategoryAddSuccess" data-ajax-failure="onCategoryAddFailure" data-ajax-begin="onAddCategoryBegin" data-ajax-complete="onAddCategoryComplete">
+                    <input type="text" class="form-control" placeholder="Category Name" required="required" />
+                    <button id="add-submit-button" class="btn btn-lg btn-primary btn-block text-center">Add</button>
+                </form>
         
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
+<script src="~/js/product/addproduct.js"></script>
