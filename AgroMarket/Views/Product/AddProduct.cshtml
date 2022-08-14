@@ -1,5 +1,7 @@
-﻿@model AgroMarket.ViewModel.Product.ProductCreateViewModel;
+﻿
+@model AgroMarket.ViewModel.Product.ProductCreateViewModel;
 <link rel="stylesheet" href="~/css/account/login/loginform.css">
+<link rel="stylesheet" href="~/ilibs/fontawesome/css/all.css"/>
 <div class="wrapper">
     <form class="form-signin" data-ajax="true" asp-action="Create" asp-controller="ProductApi" enctype="multipart/form-data">
         <h2 class="form-signin-heading text-center">Add Product</h2>
@@ -10,8 +12,15 @@
         </div>
         <div class="form-group">
             @Html.LabelFor(x=>x.CategoryId)
-            @Html.DropDownListFor(x=>x.CategoryId,Model.Categories,new{@class="form-control mb-2"})
-
+            <div class="input-group mb-3">
+                 @Html.DropDownListFor(x=>x.CategoryId,Model.Categories,new{@class="form-control mb-2"})
+            <div class="input-group-append">
+                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal">
+                 <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+            </div>
+           
         </div>
         <div class="form-group">
             @Html.LabelFor(x=>x.Stock)
@@ -43,3 +52,25 @@
   
 </div>
 @*<script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>*@
+<!-- Modal Header -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add Category</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <form class="form-signin" data-ajax="true" data-ajax-url="@Url.Action("AddCategory","ProductApi")" method="post" data-ajax-success="onCategoryAddSuccess" data-ajax-failure="onCategoryAddFailure" data-ajax-begin="onAddCategoryBegin" data-ajax-complete="onAddCategoryComplete">
+            <input type="text" class="form-control" placeholder="Category Name" required="required" />
+            <button id="add-submit-button" class="btn btn-lg btn-primary btn-block text-center">Add</button>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
