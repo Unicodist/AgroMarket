@@ -42,7 +42,8 @@ public class ProductApiController : ApiControllerBase
     }
     
     [Route("addCategory")]
-    public async Task<IActionResult> AddCategory(string categoryName)
+    [HttpPost]
+    public async Task<IActionResult> AddCategory([FromForm]string categoryName)
     {
         await _productClassService.Insert(categoryName);
         return Ok();

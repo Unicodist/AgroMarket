@@ -21,8 +21,8 @@ namespace AgroMarket.Service
 
         public async Task Insert(string name)
         {
-            var category = _productclassRepo.GetQueryable().First(x => x.Name == name);
-            if (category != null) throw new ProductClassAlreadyExistException();
+            var category = _productclassRepo.GetQueryable().Where(x => x.Name == name);
+            if (category.Any()) throw new ProductClassAlreadyExistException();
             var productClass = new ProductClass(name);
             await _productclassRepo.InsertAsync(productClass);
         }
