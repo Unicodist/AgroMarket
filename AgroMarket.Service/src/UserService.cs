@@ -28,4 +28,10 @@ public class UserService
         }
         throw new Exception("Wrong password");
     }
+    public async Task Update(UserUpdateDto dto)
+    {
+        var user = 
+       
+        await _userRepo.UpdateAsync(user);
+    }
 }
