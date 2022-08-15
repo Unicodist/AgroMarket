@@ -62,8 +62,14 @@ public class ProductApiController : ApiControllerBase
         var model = categories.Select(x=>new CategorizedProductViewModel()
         {
             CategoryName = x.Name,
-            Products = null
-        });
-        return Ok();
+            Products = x.Products.Select(y=>new ProductViewModel()
+            {
+                FarmerName = y.Farmer.Name,
+                Image = y.Picture,
+                Price = y.Price,
+                Stock = y.Stock,
+            })
+        }).ToList();
+        return Ok(model);
     }
 }
