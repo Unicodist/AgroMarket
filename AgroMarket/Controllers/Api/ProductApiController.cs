@@ -54,4 +54,16 @@ public class ProductApiController : ApiControllerBase
         var category = await _productClassRepository.GetByName(categoryName);
         return Ok();
     }
+
+    [Route("getlatestproducts")]
+    public IActionResult GetLatestProducts()
+    {
+        var categories = _productClassRepository.GetQueryable().Where(x => x.Products.Count > 0);
+        var model = categories.Select(x=>new CategorizedProductViewModel()
+        {
+            CategoryName = x.Name,
+            Products = 
+        });
+        return Ok();
+    }
 }

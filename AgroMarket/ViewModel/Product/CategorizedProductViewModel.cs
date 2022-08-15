@@ -4,7 +4,7 @@ namespace AgroMarket.ViewModel.Product
 {
     public class CategorizedProductViewModel
     {
-        public string? CategoryName { get; set; }
-        public IEnumerable<ProductViewModel>? ProductViewModel { get; set; }
+        public string CategoryName { get; set; }
+        public IEnumerable<ProductViewModel>? Products { get; set; }
     }
 }
