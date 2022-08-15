@@ -4,10 +4,10 @@ namespace AgroMarket.ViewModel.Product
 {
     public class ProductViewModel
     {
-        public string? FarmerName { get; set; }
+        public string FarmerName { get; set; }
         [DisplayName("Price")]
-        public long? Price { get; set; }
-        public IFormFile? Image { get; set; }
+        public decimal Price { get; set; }
+        public string Image { get; set; }
         [DisplayName("ExpiryDate")]
         public int Stock { get; set; }
     }

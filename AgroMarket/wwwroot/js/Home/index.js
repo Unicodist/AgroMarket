@@ -1,3 +1,5 @@
 ﻿window.addEventListener('load',()=>{
-   $.get('/api/productapi/getproductlatests') 
+   $.get('/api/productapi/getlatestproducts',function (data){
+      console.log(data);
+   });
 });
