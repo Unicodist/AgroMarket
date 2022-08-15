@@ -67,4 +67,10 @@ public class UserApiController : ApiControllerBase
         };
         return new JsonResult(userModel);
     }
+    [HttpPut]
+    public async Task<IActionResult> Update(int panNo)
+    {
+
+        return Ok();
+    }
 }
