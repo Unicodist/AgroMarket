@@ -9,7 +9,12 @@ namespace AgroMarket.Service.src.Dto.User;
 
 public class UserUpdateDto: UserCreateDto
 {
-    public long Id { get; set; }
-    
+    public UserUpdateDto(string modelName, string modelMobileNumber, string password, string address, string panNumber):base(modelName,modelMobileNumber,password,address)
+    {
+        PanNumber = panNumber;
+
+    }
+    public string PanNumber { get; set; }
+
 }
 
