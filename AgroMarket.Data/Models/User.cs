@@ -26,5 +26,10 @@ namespace AgroMarket.Data.Models
 
         public UserType Type { get; set; }
         public string Password { get; set; }
+
+        public void AddPan(string dtoPanNumber)
+        {
+            PanNumber = dtoPanNumber;
+        }
     }
 }

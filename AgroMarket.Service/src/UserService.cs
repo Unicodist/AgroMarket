@@ -2,6 +2,7 @@
 using AgroMarket.Data.Repository;
 using AgroMarket.Service.Dto.User;
 using AgroMarket.Service.src.Dto.User;
+using AgroMarket.Shared.Exception;
 
 namespace AgroMarket.Service;
 
@@ -31,7 +32,9 @@ public class UserService
     }
     public async Task Update(UserUpdateDto dto)
     {
-        var user = 
+        var user = await _userRepo.GetByIdAsync(dto.Id)??throw new UserNotFoundException();
+
+        user.AddPan(dto.PanNumber);
        
         await _userRepo.UpdateAsync(user);
     }
