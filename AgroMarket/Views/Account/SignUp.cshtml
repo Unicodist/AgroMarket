@@ -1,13 +1,14 @@
 ﻿@model AgroMarket.ViewModel.UserCreateViewModel;
 <link rel="stylesheet" href="~/css/account/login/loginform.css">
 <div class="wrapper">
-    <form class="form-signin" data-ajax="true" asp-action="Signup" asp-controller="UserApi">
+    <form class="form-signin" data-ajax="true" data-ajax-url="@Url.Action("Login","UserApi")" method="post" data-ajax-success="onSignupSuccess" data-ajax-begin="onSignupBegin" data-ajax-complete="onSignupComplete">
         <h2 class="form-signin-heading text-center">SignUp Form</h2>
         @Html.TextBoxFor(m=>m.Name,new{@class="form-control",required="required",placeholder="Full Name"})
         @Html.TextBoxFor(m=>m.MobileNumber,new{@class="form-control",required="required",placeholder="Mobile Number"})
         @Html.TextBoxFor(m=>m.Address,new{@class="form-control",required="required",placeholder="Address"})
         @Html.PasswordFor(m=>m.Password,new{@class="form-control",required="required",placeholder="Password"})
         @Html.PasswordFor(m=>m.Confirm,new{@class="form-control",required="required",placeholder="Confirm"})
-        <button class="btn btn-lg btn-primary btn-block text-center">Sign Up</button>
+        <button id="signup-submit-button" class="btn btn-lg btn-primary btn-block text-center">Sign Up</button>
     </form>
 </div>
+<script src="~/js/account/signup.js"></script>
