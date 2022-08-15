@@ -30,7 +30,7 @@ public class UserService
         }
         throw new Exception("Wrong password");
     }
-    public async Task Update(UserUpdateDto dto)
+    public async Task RegisterFarmer(UserUpdateDto dto)
     {
         var user = await _userRepo.GetByIdAsync(dto.Id)??throw new UserNotFoundException();
 
