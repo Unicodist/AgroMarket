@@ -1,6 +1,8 @@
 ﻿using AgroMarket.Data.Repository;
+using AgroMarket.Helper;
 using AgroMarket.Service;
 using AgroMarket.Service.Dto.User;
+using AgroMarket.Service.src.Dto.User;
 using AgroMarket.Shared.Exception;
 using AgroMarket.ViewModel;
 using AgroMarket.ViewModel.User;
@@ -15,6 +17,7 @@ public class UserApiController : ApiControllerBase
 {
     private readonly UserService _userService;
     private readonly UserRepository _userRepo;
+    private readonly UserHelper _userHelper;
 
     // GET
     public UserApiController(UserService userService, UserRepository userRepo)
@@ -68,8 +71,11 @@ public class UserApiController : ApiControllerBase
         return new JsonResult(userModel);
     }
     [HttpPut]
-    public async Task<IActionResult> Update(int panNo)
+    public async Task<IActionResult> MakeFarmer(string panNo)
     {
+        var user = _userHelper.GetCurrentUser();
+        var dto = new UserUpdateDto() { PanNumber = panNo, Id= user.Id };
+        await _userService.RegisterFarmer(dto);
 
         return Ok();
     }
