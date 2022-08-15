@@ -43,7 +43,7 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-          <form class="form-signin" data-ajax="true" data-ajax-url="@Url.Action()" method="post" data-ajax-begin="onLoginBegin" data-ajax-complete="onLoginComplete">
+          <form class="form-signin" data-ajax="true" data-ajax-url="@Url.Action("MakeFarmer","UserApi")" method="post" data-ajax-begin="onLoginBegin" data-ajax-complete="onLoginComplete">
             <input type="text" class="form-control" placeholder="Pan Number" required="required" />
             <button id="login-submit-button" class="btn btn-lg btn-primary btn-block text-center">Insert</button>
           </form>
