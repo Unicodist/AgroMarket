@@ -2,27 +2,8 @@
 
 <div class="container text-center">
     <h1>All Products</h1>
-           @* <a asp-controller="Product" asp-action="AddProduct" class='btn btn-warning btn-lg p-3 m-3 font-weight-bold'>
-                Add New Product <i class='fas fa-plus-square p-2 fa-1x'></i>     
-            </a>*@
 </div>
-<br /><br /><br /><br />
-
-@*<div class="row">
-    <div class="card" style="width:400px">
-        <h2>Farmer Name</h2>
-    <img class="card-img-top" src="" alt="Card image" style="width:100%">
-    <div class="card-body">
-        <div class="row">
-          <div class="col-sm-4">.<h4 class="card-title">Product Name</h4></div>
-        </div>
-        <div class="row">
-            <h5>Price:</h5>
-        </div>
-      <a href="#" class="btn btn-primary">Add to Cart</a>
-    </div>
-  </div>
-</div>*@
+<br />
 
 <section class="section-products">
 		<div class="container">
@@ -34,22 +15,18 @@
 						</div>
 				</div>
 				<div class="row">
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-1" class="single-product">
-										<div class="part-1">
-											<span class="farmer-name">Farmer Name</span>
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Product Title</h3>
-												
-												<h4 class="product-price">Rs. 49.99</h4>
-										</div>
-								</div>
+						<div id="allproducts_card_holder" class="col-md-6 col-lg-4 col-xl-3">
+								
 						</div>
 				</div>
 		</div>
 </section>
+
+<script src="~/js/template/productItemCard.js"></script>
+<script>
+	window.addEventListener('load',()=>{
+			$('#allproducts_card_holder').html(renderProductItemCard('Shoe','Ashish','49.99','/uploads/18b0b41f-2e41-4a73-b64e-3ede3cd1c34a.png'));
+		});
+
+</script>
 
