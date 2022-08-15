@@ -4,8 +4,6 @@
         text: "Product added successfully\nYou will be redirected to the page",
         icon: "Success",
         timer:3000
-    }).then(function (){
-        window.location.replace(data.url);
     });
 }
 
