@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using AgroMarket.Data.Repository;
 using AgroMarket.Helper;
 using AgroMarket.Service;
 using AgroMarket.Service.Dto.Product;
@@ -12,12 +13,16 @@ public class ProductApiController : ApiControllerBase
     private readonly ProductFileHelper _productHelper;
     private readonly ProductService _productService;
     private readonly ProductClassService _productClassService;
+    private readonly ProductRepository _productRepository;
+    private readonly ProductClassRepository _productClassRepository;
 
-    public ProductApiController(ProductFileHelper productHelper, ProductService productService, ProductClassService productClassService)
+    public ProductApiController(ProductFileHelper productHelper, ProductService productService, ProductClassService productClassService, ProductRepository productRepository, ProductClassRepository productClassRepository)
     {
         _productHelper = productHelper;
         _productService = productService;
         _productClassService = productClassService;
+        _productRepository = productRepository;
+        _productClassRepository = productClassRepository;
     }
     public async Task<IActionResult> Create([FromForm]ProductCreateViewModel model)
     {
@@ -46,6 +51,7 @@ public class ProductApiController : ApiControllerBase
     public async Task<IActionResult> AddCategory([FromForm]string categoryName)
     {
         await _productClassService.Insert(categoryName);
+        var category = await _productClassRepository.GetByName(categoryName);
         return Ok();
     }
 }

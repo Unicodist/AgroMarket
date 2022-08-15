@@ -1,4 +1,6 @@
 ﻿using AgroMarket.Data.Models;
+using AgroMarket.Shared.Exception;
+using Microsoft.EntityFrameworkCore;
 
 namespace AgroMarket.Data.Repository;
 
