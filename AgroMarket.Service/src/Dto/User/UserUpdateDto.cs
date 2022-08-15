@@ -15,6 +15,6 @@ public class UserUpdateDto: UserCreateDto
 
     }
     public string PanNumber { get; set; }
-
+    public long Id { get; set; }
 }
 
