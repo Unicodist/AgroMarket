@@ -62,7 +62,7 @@ public class ProductApiController : ApiControllerBase
         var model = categories.Select(x=>new CategorizedProductViewModel()
         {
             CategoryName = x.Name,
-            Products = 
+            Products = null
         });
         return Ok();
     }

@@ -2,6 +2,10 @@
 {
     public class UserCreateDto
     {
+        public UserCreateDto()
+        {
+            
+        }
         public UserCreateDto(string modelName, string modelMobileNumber, string password, string address)
         {
             Name = modelName;

@@ -73,7 +73,7 @@ public class UserApiController : ApiControllerBase
     [HttpPut]
     public async Task<IActionResult> MakeFarmer(string panNo)
     {
-        var user = _userHelper.GetCurrentUser();
+        var user = _userHelper.GetCurrentUser(this);
         var dto = new UserUpdateDto() { PanNumber = panNo, Id= user.Id };
         await _userService.RegisterFarmer(dto);
 
