@@ -20,10 +20,11 @@ public class UserApiController : ApiControllerBase
     private readonly UserHelper _userHelper;
 
     // GET
-    public UserApiController(UserService userService, UserRepository userRepo)
+    public UserApiController(UserService userService, UserRepository userRepo, UserHelper userHelper)
     {
         _userService = userService;
         _userRepo = userRepo;
+        _userHelper = userHelper;
     }
     [AllowAnonymous]
     [Route("login")]
@@ -78,5 +79,12 @@ public class UserApiController : ApiControllerBase
         await _userService.RegisterFarmer(dto);
 
         return Ok();
+    }
+    [HttpGet]
+    [Route("getcurrentuser")]
+    public IActionResult GetCurrent()
+    {
+        var user = _userHelper.GetCurrentUser(this);
+        return Ok(user);
     }
 }
