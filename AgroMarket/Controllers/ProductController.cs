@@ -26,7 +26,6 @@ namespace AgroMarket.Controllers
         {
             return View();
         }
-        [AllowAnonymous]
         public async Task<IActionResult> AddProduct()
         {
             var model = new ProductCreateViewModel()

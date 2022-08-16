@@ -3,9 +3,9 @@ using AgroMarket;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.DiConf();
 builder.Services.AddControllersWithViews();
 builder.Services.ConfigureStartup();
-builder.Services.DiConf();
 
 var app = builder.Build();
 

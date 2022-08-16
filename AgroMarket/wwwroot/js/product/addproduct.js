@@ -6,7 +6,15 @@
         timer:3000
     });
 }
-
+function onProductAddSuccess(data, status, xhr) {
+    window.location.replace('/home/index');
+}
+function onAddProductBegin(xhr) {
+    $('#productadd-submit-button').attr('disabled', 'disabled');
+}
+function onAddProductComplete(xhr, status) {
+    $('#productadd-submit-button').removeAttr('disabled');
+}
 function onCategoryAddFailure(xhr, status, error) {
     Swal.fire({
         title: "We have a problem",
