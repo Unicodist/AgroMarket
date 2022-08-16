@@ -65,6 +65,7 @@ public class ProductApiController : ApiControllerBase
             Products = x.Products.Select(y=>new ProductViewModel()
             {
                 FarmerName = y.Farmer.Name,
+                ProductName=y.Name,
                 Image = y.Picture,
                 Price = y.Price,
                 Stock = y.Stock,
