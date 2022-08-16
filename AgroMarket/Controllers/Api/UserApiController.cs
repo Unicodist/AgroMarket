@@ -84,7 +84,7 @@ public class UserApiController : ApiControllerBase
     [Route("getcurrentuser")]
     public IActionResult GetCurrent()
     {
-        var user = _userHelper.GetCurrentUser(this);
-        return Ok(user);
+        var user = User.Claims.FirstOrDefault(x => x.Type.Equals(ClaimTypes.Name)).Value;
+        return Ok(new {Name = user});
     }
 }
